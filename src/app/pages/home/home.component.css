@@ -1,0 +1,26 @@
+body {
+  overflow: hidden;
+}
+
+.AmpSize {
+  font-size: 24px;
+  margin-left: 5px;
+}
+
+.fbLogo {
+  margin-left: 8px;
+
+}
+
+body{
+  overflow: scroll;
+}
+
+.customer-1, .customer-2, .customer-3 {
+  border-radius: 50%;
+}
+
+.portfolio-img1, .portfolio-img2, .portfolio-img3 {
+  height: 300px;
+  width: 400px;
+}

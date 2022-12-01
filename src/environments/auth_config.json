@@ -1,0 +1,6 @@
+{
+  "domain": "pwelby.auth0.com",
+  "clientId": "9JDK1S8f8Xinr0aMPCZZ0dbNyrxZLpHn",
+  "audience": "https://express.sample",
+  "serverUrl": "http://localhost:6060"
+}

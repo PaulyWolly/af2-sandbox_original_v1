@@ -1,0 +1,16 @@
+.videoPlacement {
+    position: relative;
+    top: 3px;
+}
+
+.lead{
+    font-size: 1.00rem;
+}
+
+p .leadStyle {
+    font-size: 20px;
+}
+
+body {
+    overflow: hidden;
+}

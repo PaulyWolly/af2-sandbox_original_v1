@@ -1,0 +1,31 @@
+<form>
+
+    <h1 class="h3 mb-3 fw-normal">Please sign in to create an account</h1>
+
+    <div class="formGroup form-floating fieldWidth">
+
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" #userEmail required>
+        <label for="floatingInput">Email address</label>
+    </div>
+
+    <div class="formGroup form-floating fieldWidth">
+
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" #userPassword required>
+        <label for="floatingPassword fieldWidth">Password</label>
+    </div>
+
+    <!-- Calling SignIn Api from AuthService -->
+    <div class="formGroup">
+        <button type="button" class="w-100 btn btn-lg btn-primary" value="Log in" (click)="onSignIn(userEmail.value, userPassword.value)">Sign In</button>
+    </div>
+
+    <div class="forgotPassword">
+        <span routerLink="/forgot-password">Forgot Password?</span>
+    </div>
+
+    <p>&nbsp;</p>
+    <mat-checkbox>Subscribe to my Newsletter</mat-checkbox>
+
+
+    <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p> -->
+</form>

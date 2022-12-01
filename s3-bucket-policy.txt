@@ -1,0 +1,13 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1638800815871",
+    "Statement": [
+        {
+            "Sid": "Stmt1638800807913",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::pw-angular-dashboard/*"
+        }
+    ]
+}

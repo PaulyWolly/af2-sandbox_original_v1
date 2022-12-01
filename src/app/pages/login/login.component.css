@@ -1,0 +1,100 @@
+.content {
+    display: flex;
+    margin: 50px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 10px;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.sandboxTextStyle {
+    font-size: 22px;
+    font-style: normal;
+    font-stretch: condensed;
+    position: relative;
+    right: 60px;
+}
+
+.form-signin {
+    position: relative;
+    bottom: 65px;
+}
+
+.highlight-card {
+    position: relative;
+    top: 3px;
+}
+
+.videoPlacement {
+    position: relative;
+    top: 3px;
+}
+
+.lead {
+    font-size: 1.00rem;
+}
+
+p .leadStyle {
+    font-size: 20px;
+}
+
+.AmpSize {
+    font-size: 24px;
+    margin-left: 5px;
+}
+
+.fbLogo {
+    margin-left: 8px;
+}
+
+.pwLogoSize {
+    position: relative;
+    padding-left: 10px;
+    height: 40px;
+    /*top:10px;*/
+}
+
+.iconSpacer {
+    margin-left: 10px;
+}
+
+.extraHeight {
+    position: relative;
+    height: 130px;
+    max-height: 100px;
+}
+
+
+div .red-circle-rocket {
+    position: relative;
+    max-height: 130px;
+    left: 25px;
+    bottom: 10px;
+}
+
+.center-content {
+    margin-top: 100px;
+}
+
+div.card.card-medium {
+    height: 100px;
+    width: 410px;
+
+}
+
+.welcome-to-my {
+    position: relative;
+    bottom: 80px;
+    left: 150px;
+}
+
+.newsletter-checkbox {
+    position: relative;
+    top:30px;
+}

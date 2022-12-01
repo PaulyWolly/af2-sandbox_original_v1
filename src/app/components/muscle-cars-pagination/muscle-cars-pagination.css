@@ -1,0 +1,27 @@
+.dashboard-link {
+    font: normal 14px sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: lightgrey;
+    border-top: 1px solid black;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    outline: none;
+}
+
+.dashboard-link a:hover {
+    color: red;
+}
+
+.ngx-pagination {
+    margin-left: 0px;
+    margin-right: 40px;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,33 @@
+<!--src/app/pages/external-api/external-api.component.html-->
+
+<div>
+  <h1>External API</h1>
+  <p>
+    Use these buttons to call an external API. The protected API call has an
+    access token in its authorization header. The API server will validate the
+    access token using the Auth0 Audience value.
+  </p>
+  <div
+    class="btn-group mt-5"
+    role="group"
+    aria-label="External API Requests Examples"
+  >
+    <button (click)="callApi()" type="button" class="btn btn-primary">
+      Get Public Message
+    </button>
+    <button (click)="callSecureApi()" type="button" class="btn btn-primary">
+      Get Protected Message
+    </button>
+  </div>
+
+  <div *ngIf="message" class="mt-5">
+    <h6 class="muted">Result</h6>
+    <div class="container-fluid">
+      <div class="row">
+        <code class="col-12 text-light bg-dark p-4">
+          {{ message }}
+        </code>
+      </div>
+    </div>
+  </div>
+</div>

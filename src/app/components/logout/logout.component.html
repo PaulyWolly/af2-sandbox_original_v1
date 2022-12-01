@@ -1,0 +1,27 @@
+<div *ngIf="isLoggedIn" ngbDropdown class="d-inline-block">
+    <a style="color: #fff;" class="btn btn-outline-primary" id="dropdownBasic1" data-bs-toggle="dropdown" ngbDropdownToggle>
+        <img style="height: 19px;width: 18px;" src="../../../assets/img/person-icon-7.png" alt="">
+    </a>
+
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem [routerLink]="['/Profile']">
+            <img style="height: 19px;width: 18px;" src="../../../assets/img/person-icon-2.png" alt="">&nbsp;Profile</button>
+
+        <button *ngIf="showNewsLink" ngbDropdownItem [routerLink]="['/newsletter']">
+            <img
+                style="height: 19px;width: 18px;"
+                src="../../../assets/img/newsletter.png"
+                alt="">&nbsp;Newsletter
+        </button>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <button ngbDropdownItem class="dropdown-item logoutPointer" (click)="handleLogout()">
+            <img
+                class="imageIcon logout"
+                src="../../../assets/img/door-open-fill.svg" door-open-fill.svg width="17" height="17"
+                alt=""> Logout
+        </button>
+
+    </div>
+</div>

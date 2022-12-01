@@ -1,0 +1,21 @@
+.active {
+    color: #fff;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.social-icon-group {
+    position: relative;
+    bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.navbar {
+    height: 80px;
+    background-color: royalblue;
+}
+
+footer {
+    max-height: 50px;
+    height: 50px;
+}

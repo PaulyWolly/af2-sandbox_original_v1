@@ -1,0 +1,19 @@
+.newsletter-dialog {
+  margin-top: 70px;
+  max-width: 560px;
+  border: 1px solid grey;
+  /* box-shadow: 4px 3px #555; */
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  max-height: 800px;
+  margin-bottom: 30px;
+
+}
+
+.dialog-footer {
+  margin-left: 265px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+
+

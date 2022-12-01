@@ -1,0 +1,65 @@
+2021 Update...
+
+Bootstrap 5 (beta)
+
+For aligning within a flexbox div or row...
+
+ml-auto => ms-auto // align left
+mr-auto => me-auto // align right
+
+For text align or floats..
+
+text-left => text-start
+text-right => text-end
+float-left => float-start
+float-right => float-end
+Bootstrap 4+
+
+pull-right => float-right
+
+text-right is the same as 3.x, and works for inline elements
+both float-* and text-* are responsive for different alignment at different widths (ie: float-sm-right)
+
+The flexbox utils (eg:justify-content-between) can also be used for alignment:
+
+<div class="d-flex justify-content-between">
+      <div>
+         left
+      </div>
+      <div>
+         right
+      </div>
+ </div>
+or, auto-margins (eg:ml-auto) in any flexbox container (row,navbar,card,d-flex,etc...)
+
+<div class="d-flex">
+      <div>
+         left
+      </div>
+      <div class="ml-auto">
+         right
+      </div>
+ </div>
+
+
+Bootstrap 4 Align Demo
+Bootstrap 4 Right Align Examples(float, flexbox, text-right, etc...)
+
+Bootstrap 3
+
+Use the pull-right class..
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">Total cost</div>
+    <div class="col-md-6"><span class="pull-right">$42</span></div>
+  </div>
+</div>
+Bootstrap 3 Demo
+
+You can also use the text-right class like this:
+
+  <div class="row">
+    <div class="col-md-6">Total cost</div>
+    <div class="col-md-6 text-right">$42</div>
+  </div>
