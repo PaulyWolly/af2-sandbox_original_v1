@@ -25,7 +25,7 @@
         </div>
 
 
-        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" matSortDirection="asc">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" matSortActive="timeStamp" matSortDirection="desc">
 
           <!-- Id Column -->
           <!-- <ng-container matColumnDef="id">
