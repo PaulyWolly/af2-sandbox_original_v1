@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AngularFirebase-Sandbox": {
+    "af2-sandbox_original_v1": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/AngularFirebase-Sandbox",
+            "outputPath": "dist/af2-sandbox_original_v1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -80,10 +80,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "AngularFirebase-Sandbox:build:production"
+              "browserTarget": "af2-sandbox_original_v1:build:production"
             },
             "development": {
-              "browserTarget": "AngularFirebase-Sandbox:build:development"
+              "browserTarget": "af2-sandbox_original_v1:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AngularFirebase-Sandbox:build"
+            "browserTarget": "af2-sandbox_original_v1:build"
           }
         },
         "test": {
@@ -115,5 +115,5 @@
       }
     }
   },
-  "defaultProject": "AngularFirebase-Sandbox"
+  "defaultProject": "af2-sandbox_original_v1"
 }
