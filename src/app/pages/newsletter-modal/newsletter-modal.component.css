@@ -6,7 +6,8 @@
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   max-height: 800px;
   margin-bottom: 30px;
-
+  width: 99%;
+  overflow-x: hidden;
 }
 
 .dialog-footer {
@@ -15,5 +16,8 @@
   overflow: hidden;
 }
 
+.modal-container {
+  width: 99%;
+}
 
 
