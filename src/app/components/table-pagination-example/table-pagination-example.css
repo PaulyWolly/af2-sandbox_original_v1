@@ -1,11 +1,20 @@
 body {
-  overflow: auto;
+  overflow-x: hidden;
 }
 table {
-  width: 100%;
+  width: 99%;
 }
+
+.newsletter-container {
+  overflow-x: hidden;
+  width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .container {
-  overflow: auto;
+  overflow-x: hidden;
+  width: 99%;
 }
 .m-100{
   margin: 100px;

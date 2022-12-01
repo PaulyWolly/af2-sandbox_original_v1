@@ -5,6 +5,8 @@ import {AngularFirestore} from '@angular/fire/compat/firestore'
 
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {MatSort, Sort} from '@angular/material/sort';
+import * as firebase from "firebase/app"
+import "firebase/firestore"
 
 /**
  * @title Table with pagination
@@ -20,7 +22,7 @@ export class TablePaginationExample implements OnInit {
 
 
   // Columns to show in table
-  displayedColumns: string[] = ['name', 'email', 'personalInfo', 'editObj'];
+  displayedColumns: string[] = [ 'name', 'email', 'personalInfo', 'timeStamp', 'editObj'];
 
   // For referencing a local dataset
   //dataSource = new MatTableDataSource<Users>(this.dataSourceInfo);
@@ -31,6 +33,7 @@ export class TablePaginationExample implements OnInit {
   name: any;
   email: any;
   personalInfo: any;
+  timeStamp: any;
   editObj: any;
   actions: any;
 
@@ -48,13 +51,39 @@ export class TablePaginationExample implements OnInit {
   edit: any;
 
   constructor(
-    private store: AngularFirestore,
+    public store: AngularFirestore,
     private _liveAnnouncer: LiveAnnouncer
   ){}
 
   ngOnInit() {
     this.getAll();
   }
+
+  // New method for converting timeStamp object
+  public static convertDate(firebaseObject: any) {
+    if (!firebaseObject) return null;
+
+    for (const [key, value] of Object.entries(firebaseObject)) {
+
+      // covert items inside array
+      if (value && Array.isArray(value) )
+      firebaseObject[key] = value.map(item => this.convertDate(item));
+
+      // convert inner objects
+      if (value && typeof value === 'object' ){
+      firebaseObject[key] = this.convertDate(value);
+      }
+
+      //firebase.firestore.Timestamp.fromDate(...)
+
+      // convert simple properties
+      // if (value && value.hasOwnProperty('seconds'))
+      // firebaseObject[key] = (value as firebase.firestore.Timestamp).toDate();
+    }
+    return firebaseObject;
+  }
+
+  /////////////////////////////////////////////
 
   openDialog(arg: string | undefined){
     if (arg === 'add') {
@@ -81,13 +110,26 @@ export class TablePaginationExample implements OnInit {
 
   addUser(){
 
+    const todayDate = new Date();
+    console.log("Date now: ", todayDate)
+
     if(this.editObj){
       this.store.collection('list')
         .doc(this.editObj.id)
-        .update({name: this.name, personalInfo: this.personalInfo, email: this.email});
+        .update({
+          name: this.name,
+          personalInfo: this.personalInfo,
+          email: this.email,
+          timeStamp : todayDate
+        });
     } else {
       this.store.collection('list')
-        .add({name: this.name, personalInfo: this.personalInfo, email: this.email});
+        .add({
+          name: this.name,
+          personalInfo: this.personalInfo,
+          email: this.email,
+          timeStamp : todayDate
+        });
     }
     this.clearEdit();
     this.closeDialog();
@@ -116,15 +158,38 @@ export class TablePaginationExample implements OnInit {
 
   getAll(){
     this.store.collection('list')
-      .snapshotChanges()
-      .subscribe((response) => {
-        this.dataSource = new MatTableDataSource(response.map(item => {
-          return Object.assign({id: item.payload.doc.id}, item.payload.doc.data())
-        }))
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      });
-  }
+   .snapshotChanges()
+   .subscribe((response) => {
+     this.dataSource = new MatTableDataSource(response.map(item => {
+       console.log("===============> item.payload.doc.data() response: ", item.payload.doc.data())
+
+       return Object.assign(
+         { id: item.payload.doc.id },
+         { timeStamp: this.timeStamp },
+         item.payload.doc.data()
+       )
+     }))
+     // this.dataSource.Timestamp = this.timeStamp;
+     this.dataSource.paginator = this.paginator;
+     this.dataSource.sort = this.sort;
+     console.log("===============> response: ", response)
+   });
+}
+
+  // getAll(){
+  //   this.store.collection('list')
+  //     .snapshotChanges()
+  //     .subscribe((response) => {
+  //       this.dataSource = new MatTableDataSource(response.map(item => {
+  //         return Object.assign(
+  //           { id: item.payload.doc.id },
+  //           { timeStamp: this.timeStamp },
+  //           item.payload.doc.data()
+  //       )
+  //       this.dataSource.paginator = this.paginator;
+  //       this.dataSource.sort = this.sort;
+  //     });
+  // }
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
