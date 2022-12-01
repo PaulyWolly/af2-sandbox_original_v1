@@ -1,4 +1,4 @@
-<div class="container">
+<div class="newsletter-container">
     <div class="row">
       <div class="col-lg-1"></div>
       <div *ngIf="!isShown" class="main-container col-lg-10">
@@ -25,13 +25,13 @@
         </div>
 
 
-        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" matSortDirection="asc">
 
           <!-- Id Column -->
-          <ng-container matColumnDef="id">
+          <!-- <ng-container matColumnDef="id">
             <th class="header-label-style" mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id"> Id </th>
             <td mat-cell *matCellDef="let list"> {{list.id}} </td>
-          </ng-container>
+          </ng-container> -->
 
           <!-- Name Column -->
           <ng-container matColumnDef="name">
@@ -49,6 +49,12 @@
           <ng-container matColumnDef="personalInfo">
             <th class="header-label-style" mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by personalInfo"> Personal Info </th>
             <td mat-cell *matCellDef="let list"> {{list.personalInfo}} </td>
+          </ng-container>
+
+          <!-- timeStamp Column -->
+          <ng-container matColumnDef="timeStamp">
+            <th class="header-label-style" mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by timeStamp"> Date Entered </th>
+            <td mat-cell *matCellDef="let list"> {{list.timeStamp?.toDate().toLocaleString("en-US", {timeZone: "America/Los_Angeles"})}} </td>
           </ng-container>
 
           <!-- actions: editObj -->
