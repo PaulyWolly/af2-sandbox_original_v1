@@ -63,34 +63,7 @@ export class TablePaginationExample implements OnInit {
     this.sort.active = sortState.active;
     this.sort.direction = sortState.direction;
     this.sort.sortChange.emit(sortState);
-
   }
-
-  // New method for converting timeStamp object
-  public static convertDate(firebaseObject: any) {
-    if (!firebaseObject) return null;
-
-    for (const [key, value] of Object.entries(firebaseObject)) {
-
-      // covert items inside array
-      if (value && Array.isArray(value) )
-      firebaseObject[key] = value.map(item => this.convertDate(item));
-
-      // convert inner objects
-      if (value && typeof value === 'object' ){
-      firebaseObject[key] = this.convertDate(value);
-      }
-
-      //firebase.firestore.Timestamp.fromDate(...)
-
-      // convert simple properties
-      // if (value && value.hasOwnProperty('seconds'))
-      // firebaseObject[key] = (value as firebase.firestore.Timestamp).toDate();
-    }
-    return firebaseObject;
-  }
-
-  /////////////////////////////////////////////
 
   openDialog(arg: string | undefined){
     if (arg === 'add') {
@@ -176,27 +149,11 @@ export class TablePaginationExample implements OnInit {
          item.payload.doc.data()
        )
      }))
-     // this.dataSource.Timestamp = this.timeStamp;
      this.dataSource.paginator = this.paginator;
      this.dataSource.sort = this.sort;
      console.log("===============> response: ", response)
    });
 }
-
-  // getAll(){
-  //   this.store.collection('list')
-  //     .snapshotChanges()
-  //     .subscribe((response) => {
-  //       this.dataSource = new MatTableDataSource(response.map(item => {
-  //         return Object.assign(
-  //           { id: item.payload.doc.id },
-  //           { timeStamp: this.timeStamp },
-  //           item.payload.doc.data()
-  //       )
-  //       this.dataSource.paginator = this.paginator;
-  //       this.dataSource.sort = this.sort;
-  //     });
-  // }
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
