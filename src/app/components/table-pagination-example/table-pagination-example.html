@@ -25,7 +25,12 @@
         </div>
 
 
-        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" matSortActive="timeStamp" matSortDirection="desc">
+        <table
+          mat-table [dataSource]="dataSource"
+          matSort (matSortChange)="announceSortChange($event)"
+          matSortActive="timeStamp"
+          matSortDirection="desc"
+        >
 
           <!-- Id Column -->
           <!-- <ng-container matColumnDef="id">
@@ -76,7 +81,7 @@
 
         <mat-paginator
           [pageSize]="5"
-          #paginator [pageSizeOptions]="[5, 7, 10, 15, 20]"
+          #paginator [pageSizeOptions]="[5, 7, 10, 15, 20, 50, 100]"
           showFirstLastButtons
           aria-label="Select page of users">
         </mat-paginator>

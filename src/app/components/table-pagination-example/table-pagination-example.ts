@@ -57,6 +57,13 @@ export class TablePaginationExample implements OnInit {
 
   ngOnInit() {
     this.getAll();
+    this.dataSource.sort = this.sort;
+
+    const sortState: Sort = {active: 'timeStamp', direction: 'desc'};
+    this.sort.active = sortState.active;
+    this.sort.direction = sortState.direction;
+    this.sort.sortChange.emit(sortState);
+
   }
 
   // New method for converting timeStamp object
