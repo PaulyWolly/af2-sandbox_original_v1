@@ -74,9 +74,10 @@ p .leadStyle {
 
 div .red-circle-rocket {
     position: relative;
-    max-height: 130px;
+    max-height: 128px;
     left: 25px;
-    bottom: 10px;
+    bottom: 4px;
+    z-index: 1000;
 }
 
 .center-content {
