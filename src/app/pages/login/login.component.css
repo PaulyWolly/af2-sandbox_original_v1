@@ -93,7 +93,7 @@ div.card.card-medium {
 .welcome-to-my {
     position: relative;
     bottom: 80px;
-    left: 150px;
+    left: 160px;
 }
 
 .newsletter-checkbox {
@@ -103,7 +103,7 @@ div.card.card-medium {
 
 svg#rocket-smoke.rocket-smoke {
     position: absolute;
-    right: 150px;
+    right: 120px;
 }
 #clouds {
   z-index: -1;
