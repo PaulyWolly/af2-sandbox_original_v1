@@ -62,16 +62,17 @@
     <h1 class="visually-hidden">Features examples</h1>
 
     <div class="container px-4 py-5" id="featured-3">
-      <h2 class="pb-2 border-bottom">Columns with icons (Bootstrap template)</h2>
+      <h1 class="display-5 fw-bold lh-1 mb-3 border-bottom" style="padding-bottom:10px;">Features Page!</h1>
+      <!-- <h2 class="pb-2 border-bottom">Columns with icons (Bootstrap template)</h2> -->
       <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="feature col">
           <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
             <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
           </div>
-          <h3 class="fs-2">Featured title</h3>
-          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-          <a href="#" class="icon-link d-inline-flex align-items-center">
-            Call to action
+          <h4 style="color: blue;" class="fs-2">Youtube videos</h4>
+          <p>See how easy it is to play Youtube videos in an Angular application. Multiple videos are also shown. (Youtube player, routing, child routes)</p>
+          <a href="/Youtube" class="icon-link d-inline-flex align-items-center">
+            See it in action
             <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
           </a>
         </div>
@@ -79,22 +80,23 @@
           <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
             <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
           </div>
-          <h3 class="fs-2">Featured title</h3>
-          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-          <a href="#" class="icon-link d-inline-flex align-items-center">
-            Call to action
+          <h3 style="color: green;" class="fs-2">Firebase Auth</h3>
+          <p>This site is protected by the Google Firebase Authentication paradigm, using email and password. Log out and log in to see the feature.</p>
+          <a href="#" class="icon-link d-inline-flex align-items-center" (click)="handleLogout()">
+            Log out
             <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
           </a>
         </div>
         <div class="feature col">
           <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-            <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+            <i class="bi bi-newspaper"></i>
           </div>
-          <h3 class="fs-2">Featured title</h3>
-          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <h3 class="fs-2">Newsletter</h3>
+          <p>Admin users can view and manage a full CRUD Newsletter page with Material Design features, page scrolling, column filtering, modal windows. </p>
           <a href="#" class="icon-link d-inline-flex align-items-center">
             Call to action
             <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+
           </a>
         </div>
       </div>
@@ -293,6 +295,7 @@
         </div>
         <div class="col d-flex align-items-start">
           <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"/></svg>
+
           <div>
             <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
             <p>Paragraph of text beneath the heading to explain the heading.</p>
